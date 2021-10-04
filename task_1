@@ -1,73 +1,63 @@
-# {{ .CurrentStep }}. Set up SSH for Git
+#Set up SSH for Git
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/iXuIp5uNnLk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ***Private Key*** is used to both encrypt and decrypt the data and is shared between the sender and receiver of encrypted data. The ***public key*** is only used to encrypt data and to decrypt the data, the ***private key*** is used and is shared. ... The ***public key*** is free to use and the ***private key*** is kept secret only.
 
-## Task
 
-You can create a new public and private key pair with the following command:
 
-{{ i }}
+- You can create a new public and private key pair with the following command:
+
 ```
 yum install openssh-clients -y
 ssh-keygen
 ```
-{{ i }}
 
-Press the Enter or Return key to accept the default location. Enter and re-enter a passphrase when prompted, or
+
+- Press the Enter or Return key to accept the default location. Enter and re-enter a passphrase when prompted, or
 leave it empty.
 
-After you generate an SSH key, you can check to see if you have any existing SSH keys.
+- After you generate an SSH key, you can check to see if you have any existing SSH keys.
 List the contents of your ~/.ssh directory:
 
-{{ i }}
 ```
 $ ls -al ~/.ssh
 # Lists all the files in your ~/.ssh directory
 ```
-{{ i }}
 
-PCheck the directory listing to see if you already have a public SSH key. By default the filenames of the public keys are one of the following:
+- PCheck the directory listing to see if you already have a public SSH key. By default the filenames of the public keys are one of the following:
 
-{{ i }}
 ```
 id_dsa.pub
 id_ecdsa.pub
 id_ed25519.pub
 id_rsa.pub
 ```
-{{ i }}
 
-Ensure your SSH key is added to the ssh-agent. Start the ssh-agent in the background if it's not already running:
+- Ensure your SSH key is added to the ssh-agent. Start the ssh-agent in the background if it's not already running:
 
-{{ i }}
 ```
  eval $(ssh-agent -s)
- ```
-{{ i }}
+```
 
-Add you SSH key to the ssh-agent. Notice that you'll need te replace id_rsa in the command with the name of your
+- Add you SSH key to the ssh-agent. Notice that you'll need te replace id_rsa in the command with the name of your
 **private key file**:
 
-{{ i }}
 ```
  ssh-add ~/.ssh/id_rsa
- ```
-{{ i }}
+```
+
 
 Copied to the clipboard your public key.
-{{ i }}
+
 ```
 cat .ssh/id_rsa.pub
 ```
-{{ i }}
 
-After go to https://git.epam.com/ than: 
+After go to https://github.com/ than: 
 
 - Select your avatar and click on settings.
 - Click SSH Keys.
 - Paste the SSH key into the Key field.
 - Add a descriptive text in the title, something that will define you as a user or the computer it is used from.
-{{ image "1.png" }}
 - Click Add Key. A new public key was added to your account
