@@ -7,7 +7,7 @@ This repo for git course
 *git config --list*
 3. Clone a Git public repository to local copy
 4. Create GitLab projects on `Git.epam.com`
-- Create new Project into your account on **https://git.epam.com/**. 
+- Create new Project into your account on **https://github.com/**. 
 - Select: create a `new project` 
 - The name of new project should be `first_project`
 - Description: `Yet another simple HTML application`
