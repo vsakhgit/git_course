@@ -13,5 +13,5 @@ This repo for git course
 - Description: `Yet another simple HTML application`
 - Visibility Level: `Private`
 - Add to checkbox: `Initialize repository with a README`
-- 
-
+- Add a collaborator your mentor to git_course (@vsakhgit)
+5. 
